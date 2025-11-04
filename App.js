@@ -1,20 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from "react-native";
+import TextInputBox from "./components/TextInputBox";
+import TodosContainer from "./components/TodosContainer";
+import { useState } from "react";
 
-export default function App() {
+const App = () => {
+  const [todos, setTodos] = useState([{id:1,title:"Hello World"}]);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View
+      style={{
+        height: "100%",
+        width: "100%",
+        paddingTop: 50,
+        paddingBottom: 50,
+        paddingLeft: 10,
+        paddingRight: 10,
+        display: "flex",
+        alignContent: "center",
+        justifyContent: "center",
+      }}
+    >
+      <View
+        style={{
+          height: "100%",
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          gap: 30,
+        }}
+      >
+        <TextInputBox setTodos={setTodos} />
+        <TodosContainer todos={todos} setTodos={setTodos} />
+      </View>
     </View>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
