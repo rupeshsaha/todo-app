@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { View, TextInput, Button } from "react-native";
+import styles from "../style";
 
 const TextInputBox = ({ setTodos }) => {
   const handleAddNew = (newTodo) => {
@@ -16,30 +17,23 @@ const TextInputBox = ({ setTodos }) => {
 
   return (
     <View
-      style={{
-        position: "relative",
-        width: "100%",
-        display: "flex",
-        gap: 10,
-      }}
+      style={styles.inputContainer}
     >
       <TextInput
-        style={{
-          width: "100%",
-          borderWidth: 2,
-          borderColor: "#ccc",
-
-          height: 50,
-          paddingHorizontal: 20,
-          paddingRight: 50, 
-          fontSize: 16,
-        }}
+        style={styles.inputBox}
         value={currentInput}
         onChangeText={(text) => setCurrentInput(text)}
         placeholder="Enter your todo here"
       />
-
-      <Button title="Add new" onPress={() => handleAddNew(currentInput)} />
+      <View
+        style={styles.btnContainer}
+      >
+        <Button
+          title="Add new"
+          color="#f37933ff"
+          onPress={() => handleAddNew(currentInput)}
+        />
+      </View>
     </View>
   );
 };
