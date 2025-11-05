@@ -32,12 +32,12 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   inputBox: {
-    width: "75%",
+    width: "70%",
     borderWidth: 2,
     borderColor: "#ccc",
-    height: 40,
+    height: 45,
     paddingHorizontal: 5,
-    fontSize: 14,
+    fontSize: 16,
   },
   actionBtnContainer: {
     display: "flex",
@@ -47,10 +47,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   btnContainer: {
-    width: "20%",
+    width: "25%",
     display: "flex",
     justifyContent: "center",
-    borderRadius: 10,
   },
   card: {
     height: "auto",

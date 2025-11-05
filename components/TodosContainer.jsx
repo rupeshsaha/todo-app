@@ -2,16 +2,19 @@ import { View, Text, ScrollView, StyleSheet, TextInput } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import styles from "../style";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { useState } from "react";
+import {  useState } from "react";
 
 const TodosContainer = ({ todos, setTodos }) => {
 
   const [selectedTodo, setSelectedTodo] = useState({});
-  const [inputValue, setInputValue] = useState()
+  const [inputValue, setInputValue] = useState();
+
+ 
 
   const handleEdit = (todo) => {
     setSelectedTodo(todo)
     setInputValue(todo.title)
+
   }
 
   const handleSave = (todo) => {
@@ -53,7 +56,7 @@ const TodosContainer = ({ todos, setTodos }) => {
             </View>
                 </>
           ) : (<>
-              <TextInput value={inputValue} onChangeText={setInputValue} style={styles.card_title} />
+              <TextInput autoFocus value={inputValue} onChangeText={setInputValue} style={styles.card_title} />
             <AntDesign name="check" size={24} color="green" onPress={() => handleSave(todo)} />
           </>
           )}
